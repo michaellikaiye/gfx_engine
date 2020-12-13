@@ -1,0 +1,29 @@
+// Note: This uses the light values in the provided source code.
+constants obsidian .05 .05 .07 .18 .17 .23 .33 .33 .35
+constants chrome .25 .25 .25 .4 .4 .4 .77 .77 .77
+constants copper .19 .07 .02 .7 .27 .08 .25 .14 .09
+constants pearl 1 1 1 1 1 1 1 1 1
+constants ruby 1 .01 .01 .61 .04 .04 .72 .03 .03
+constants black 0 0 0 0 0 0 0 0 0
+frames 50
+basename wot
+push
+move figureeight
+push
+move 250 50 -50
+rotate x 270
+scale 10 10 10
+mesh pearl :clock
+pop
+push
+move 250 250 1000
+
+scale 30 30 30
+rotate z 360 spin
+mesh black :clockhand
+pop
+cylinder chrome 250 235 0 125 100
+vary spin 0 25 0 1 EXPONENTIAL
+vary spin 26 50 0 1 LOGARITHMIC
+path figureeight 0 25 0 0 100 200 100 -200 0 0
+path figureeight 26 50 0 0 -100 200 -100 -200 0 0
